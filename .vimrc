@@ -8,6 +8,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
   Plug 'alvan/vim-closetag'
   Plug 'bronson/vim-visual-star-search'
   Plug 'burnettk/vim-angular'
@@ -18,7 +20,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/seoul256.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'justinmk/vim-sneak'
-  Plug 'leafgarland/typescript-vim.git'
+  Plug 'leafgarland/typescript-vim'
   Plug 'majutsushi/tagbar'
   Plug 'matze/vim-move'
   Plug 'michaeljsmith/vim-indent-object'
@@ -444,3 +446,8 @@ let g:angular_test_directory='test/units'
 let g:angular_skip_alternate_mappings=1
 let g:angular_find_ignore=['build/', 'dist/']
 
+"" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
