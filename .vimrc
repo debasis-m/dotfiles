@@ -9,17 +9,21 @@ endif
 call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'alvan/vim-closetag'
+  Plug 'bronson/vim-visual-star-search'
+  Plug 'burnettk/vim-angular'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'easymotion/vim-easymotion'
-  Plug 'bronson/vim-visual-star-search'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/seoul256.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'justinmk/vim-sneak'
+  Plug 'leafgarland/typescript-vim.git'
   Plug 'majutsushi/tagbar'
   Plug 'matze/vim-move'
   Plug 'michaeljsmith/vim-indent-object'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'pangloss/vim-javascript'
   Plug 'python-mode/python-mode'
   Plug 'rust-lang/rust.vim'
   Plug 'scrooloose/nerdtree'
@@ -433,4 +437,10 @@ map <space> <Plug>(easymotion-s)
 command! -nargs=0 Date      :put ='* ' . strftime('%b %d, %Y %I:%M %p')
 command! -nargs=0 Noh       :noh
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+
+"" Angular-vim
+let g:angular_source_directory='app/source'
+let g:angular_test_directory='test/units'
+let g:angular_skip_alternate_mappings=1
+let g:angular_find_ignore=['build/', 'dist/']
 
