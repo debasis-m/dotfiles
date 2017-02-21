@@ -98,7 +98,6 @@ set nocompatible
 set path+=**
 set hidden
 set splitbelow splitright
-set tags=tags
 set whichwrap=b,s,<,>,[,]
 set nowildmenu
 
@@ -128,6 +127,10 @@ set foldmethod=indent
 
 "Display all matching files when we tab complete
 set wildmenu
+set complete-=i
+set ttimeout
+set ttimeoutlen=100
+set display+=lastline
 
 "Showing line numbers and length
 set relativenumber
@@ -136,6 +139,7 @@ set tw=79
 set nowrap
 set fo-=t
 ""set colorcolumn=80
+set sessionoptions-=options
 
 " bind Ctrl+<movement> keys to move around the windows, 
 " instead of using Ctrl+w + <movement>
@@ -143,6 +147,18 @@ set fo-=t
 ""map <c-k> <c-w>k
 ""map <c-l> <c-w>l
 ""map <c-h> <c-w>h
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
+
+if has('path_extra')
+  setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
 
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
