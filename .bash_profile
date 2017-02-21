@@ -11,3 +11,4 @@ export PATH
 export TERM="xterm-256color"
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.6"

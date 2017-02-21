@@ -51,6 +51,7 @@ call plug#end()
 
 let mapleader=","
 let g:mapleader=","
+let $PYHTONHOME="/Library/Frameworks/Python.framework/Versions/3.6/"
 
 " Save temporary/backup files not in the local directory, but in your ~/.vim
 " directory, to keep them out of git repos. 
@@ -190,6 +191,7 @@ function! CycleLNum()
 endfunc
 
 highlight Cursor guifg=black guibg=yellow
+set bg=dark
 
 set guicursor=n-v-c:block-Cursor
 set guicursor+=n-v-c:blinkon0
@@ -355,11 +357,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_javascript_checkers = ['jshint']
 
-"Haskellmode setting
-au Bufenter *.hs compiler ghc
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s %s"
-
 "Rust setting
 let g:rustfmt_autosave=1
 
@@ -451,3 +448,5 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+
