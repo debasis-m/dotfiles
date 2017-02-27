@@ -9,12 +9,12 @@ endif
 call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
   Plug 'alvan/vim-closetag'
   Plug 'bronson/vim-visual-star-search'
   Plug 'burnettk/vim-angular'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'easymotion/vim-easymotion'
+  Plug 'honza/vim-snippets'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/seoul256.vim'
@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'majutsushi/tagbar'
   Plug 'matze/vim-move'
+  Plug 'mhinz/vim-startify'
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'pangloss/vim-javascript'
@@ -100,6 +101,7 @@ set hidden
 set splitbelow splitright
 set whichwrap=b,s,<,>,[,]
 set nowildmenu
+set ttyfast
 
 "Better copy paste. When you want to paste large blocks of code into
 "vim, press F2 before you paste. 
@@ -214,7 +216,7 @@ set guicursor+=n-v-c:blinkon0
 set guicursor+=i:lCursor
 set guicursor+=i:blinkon0
 
-""set cursorline
+"""set cursorline
 
 set ai
 set si
@@ -305,6 +307,7 @@ set wildmode=list:longest,full
 set scrolloff=4
 
 nmap <F8> :TagbarToggle<cr>
+nmap <F3> :Startify<cr>
 
 "NerdTree
 ""autocmd VimEnter * NERDTree
