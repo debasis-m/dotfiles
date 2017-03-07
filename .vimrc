@@ -62,7 +62,7 @@ call plug#begin('~/.vim/plugged')
   
 call plug#end()
 
-set guifont=Consolas:h9:cANSI
+" set guifont=Consolas:h9:cANSI
 
 let mapleader=","
 let g:mapleader=","
@@ -487,14 +487,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-<<<<<<< HEAD
-let g:notes_directories = ['~/Documents/Notes']
-let g:notes_suffix = '.txt'
-let g:notes_title_sync = 'change_title'
-
-=======
 let g:notes_directories = ['~/Desktop/Notes']
 let g:notes_suffix = '.txt'
 let g:notes_title_sync = 'change_title'
 let g:notes_word_boundaries = 1
->>>>>>> 08ccf33dfa331ac3ebdb3696d1559e338dbbc38d
