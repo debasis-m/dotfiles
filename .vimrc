@@ -93,8 +93,9 @@ au TabLeave * let g:lasttab = tabpagenr()
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-"colorscheme desert
-colorscheme seoul256
+colorscheme desert
+"colorscheme seoul256
+"colorscheme badwolf
 syntax on
 filetype off
 filetype plugin indent on
