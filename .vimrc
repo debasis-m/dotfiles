@@ -45,9 +45,20 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-vinegar'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-scripts/argtextobj.vim'
+  Plug 'vim-scripts/wombat256.vim'
   Plug 'vim-syntastic/syntastic'
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-session'
+  Plug 'xolox/vim-notes'
+
+  " Haskell
+  Plug 'neovimhaskell/haskell-vim',     { 'for': 'haskell' }
+  Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
+  Plug 'eagletmt/ghcmod-vim',           { 'for': 'haskell' }
+  Plug 'eagletmt/neco-ghc',             { 'for': 'haskell' }
+  Plug 'Twinside/vim-hoogle',           { 'for': 'haskell' }
+  Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
+  
 call plug#end()
 
 let mapleader=","
@@ -468,4 +479,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+let g:notes_directories = ['~/Documents/Notes']
+let g:notes_suffix = '.txt'
+let g:notes_title_sync = 'change_title'
 
