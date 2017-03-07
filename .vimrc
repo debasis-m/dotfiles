@@ -48,6 +48,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/wombat256.vim'
   Plug 'vim-syntastic/syntastic'
   Plug 'xolox/vim-misc'
+  Plug 'xolox/vim-notes'
   Plug 'xolox/vim-session'
   Plug 'xolox/vim-notes'
 
@@ -60,6 +61,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
   
 call plug#end()
+
+set guifont=Consolas:h9:cANSI
 
 let mapleader=","
 let g:mapleader=","
@@ -112,6 +115,7 @@ set hidden
 set splitbelow splitright
 set whichwrap=b,s,<,>,[,]
 set nowildmenu
+set ff=unix 
 set ttyfast
 
 "Better copy paste. When you want to paste large blocks of code into
@@ -299,7 +303,7 @@ let g:ctrlp_custom_ignore = {
 map <leader>b :CtrlPBuffer<cr>
 map <leader>f :CtrlPMRUFiles<cr>
 let g:ctrlp_map='<C-p>'
-let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_cmd='CtrlPMRU'
 let g:ctrlp_max_height=30
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_show_hidden=0
@@ -398,7 +402,8 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-autocmd BufRead *.xsl,*.xslt,*.xml,*.htm,*.html,*.xsd,*.tas set filetype=xml
+autocmd BufRead *.xsl,*.xslt,*.xml,*.xsd,*.tas set filetype=xml
+autocmd BufRead *.htm,*.html set filetype=html
 autocmd BufRead *.java set filetype=java
 autocmd FileType {xml,xslt} setlocal iskeyword=$,@,-,\:,48-57,_,128-167,224-235 
 autocmd FileType {xml,xslt} setlocal noexpandtab
@@ -474,12 +479,21 @@ let g:angular_skip_alternate_mappings=1
 let g:angular_find_ignore=['build/', 'dist/']
 
 "" Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+<<<<<<< HEAD
 let g:notes_directories = ['~/Documents/Notes']
 let g:notes_suffix = '.txt'
 let g:notes_title_sync = 'change_title'
 
+=======
+let g:notes_directories = ['~/Desktop/Notes']
+let g:notes_suffix = '.txt'
+let g:notes_title_sync = 'change_title'
+let g:notes_word_boundaries = 1
+>>>>>>> 08ccf33dfa331ac3ebdb3696d1559e338dbbc38d
