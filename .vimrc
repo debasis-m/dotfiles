@@ -159,6 +159,10 @@ set fo-=t
 ""set colorcolumn=80
 set sessionoptions-=options
 
+noremap <leader>v <c-w>v<c-w>l
+noremap <leader>s <c-w>s<c-w>j
+noremap <leader>x <c-w>c
+
 " bind Ctrl+<movement> keys to move around the windows, 
 " instead of using Ctrl+w + <movement>
 ""map <c-j> <c-w>j
