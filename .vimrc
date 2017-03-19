@@ -43,22 +43,23 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-speeddating'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-vinegar'
+  Plug 'tpope/vim-unimpaired'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-scripts/argtextobj.vim'
   Plug 'vim-scripts/wombat256.vim'
   Plug 'vim-syntastic/syntastic'
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-notes'
-  Plug 'xolox/vim-session'
   Plug 'xolox/vim-notes'
+  Plug 'xolox/vim-session'
 
   " Haskell
-  Plug 'neovimhaskell/haskell-vim',     { 'for': 'haskell' }
-  Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
+  Plug 'Twinside/vim-hoogle',           { 'for': 'haskell' }
   Plug 'eagletmt/ghcmod-vim',           { 'for': 'haskell' }
   Plug 'eagletmt/neco-ghc',             { 'for': 'haskell' }
-  Plug 'Twinside/vim-hoogle',           { 'for': 'haskell' }
+  Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
   Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
+  Plug 'neovimhaskell/haskell-vim',     { 'for': 'haskell' }
   
 call plug#end()
 
@@ -115,9 +116,10 @@ set path+=**
 set hidden
 set splitbelow splitright
 set whichwrap=b,s,<,>,[,]
-set nowildmenu
+"" set nowildmenu
 set ff=unix 
 set ttyfast
+set nrformats=
 
 "Better copy paste. When you want to paste large blocks of code into
 "vim, press F2 before you paste. 
@@ -181,10 +183,6 @@ endif
 if has('path_extra')
   setglobal tags-=./tags tags-=./tags; tags^=./tags;
 endif
-
-" easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
 
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
@@ -271,7 +269,7 @@ set smartindent
 set novisualbell
 set noerrorbells
 set t_vb=
-set tm=500
+set tm=1000
 
 set foldcolumn=1     "extra margin in left
 
