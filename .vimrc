@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'burnettk/vim-angular'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'easymotion/vim-easymotion'
+  Plug 'flazz/vim-colorschemes'
   Plug 'honza/vim-snippets'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/goyo.vim'
@@ -42,8 +43,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-speeddating'
   Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-vinegar'
   Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-vinegar'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-scripts/argtextobj.vim'
   Plug 'vim-scripts/wombat256.vim'
@@ -108,7 +109,7 @@ nmap ga <Plug>(EasyAlign)
 colorscheme desert
 "colorscheme seoul256
 "colorscheme badwolf
-syntax on
+" syntax on
 filetype off
 filetype plugin indent on
 set nocompatible
