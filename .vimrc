@@ -210,6 +210,7 @@ xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 autocmd FileType python setlocal foldmethod=syntax
 autocmd FileType vim setlocal foldmethod=marker
 
+nmap <leader>k :set list!<CR>
 nnoremap <expr> <leader>l CycleLNum()
 xnoremap <expr> <leader>l CycleLNum()
 onoremap <expr> <leader>l CycleLNum()
