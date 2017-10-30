@@ -8,6 +8,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
   Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'christoomey/vim-tmux-navigator'
   Plug 'SirVer/ultisnips'
   Plug 'alvan/vim-closetag'
   Plug 'bronson/vim-visual-star-search'
