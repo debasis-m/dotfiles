@@ -52,8 +52,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-syntastic/syntastic'
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-notes'
-  Plug 'xolox/vim-notes'
   Plug 'xolox/vim-session'
+  Plug 'terryma/vim-expand-region'
+  Plug 'suan/vim-instant-markdown',    { 'for': 'markdown' }
 
   " Haskell
   Plug 'Twinside/vim-hoogle',           { 'for': 'haskell' }
@@ -65,11 +66,12 @@ call plug#begin('~/.vim/plugged')
   
 call plug#end()
 
-" set guifont=Consolas:h9:cANSI
+set guifont=Consolas:h9:cANSI
 
 let mapleader=","
 let g:mapleader=","
-let $PYHTONHOME="/Library/Frameworks/Python.framework/Versions/3.6/"
+" let mapleader="\<Space>"
+" let g:mapleader="\<Space>"
 
 " Save temporary/backup files not in the local directory, but in your ~/.vim
 " directory, to keep them out of git repos. 
@@ -110,7 +112,7 @@ nmap ga <Plug>(EasyAlign)
 colorscheme desert
 "colorscheme seoul256
 "colorscheme badwolf
-" syntax on
+syntax on
 filetype off
 filetype plugin indent on
 set nocompatible
@@ -118,7 +120,7 @@ set path+=**
 set hidden
 set splitbelow splitright
 set whichwrap=b,s,<,>,[,]
-"" set nowildmenu
+set nowildmenu
 set ff=unix 
 set ttyfast
 set nrformats=
@@ -127,6 +129,9 @@ set nrformats=
 "vim, press F2 before you paste. 
 set pastetoggle=<F2>
 set clipboard=unnamed
+
+set iskeyword+=-
+set iskeyword+=#
 
 "Mouse and backspace
 set mouse=a  " on OSX press ALT and click
@@ -166,6 +171,9 @@ set sessionoptions-=options
 noremap <leader>v <c-w>v<c-w>l
 noremap <leader>s <c-w>s<c-w>j
 noremap <leader>x <c-w>c
+
+map <leader>n <esc>:tabprevious<CR>
+map <leader>m <esc>:tabnext<CR>
 
 " bind Ctrl+<movement> keys to move around the windows, 
 " instead of using Ctrl+w + <movement>
@@ -272,7 +280,7 @@ set smartindent
 set novisualbell
 set noerrorbells
 set t_vb=
-set tm=1000
+set tm=500
 
 set foldcolumn=1     "extra margin in left
 
@@ -322,7 +330,7 @@ set virtualedit=block
 
 set autowrite    "Save buffer automatically when changing files
 set autoread     "Always reload buffer when external changes detected
-set fileformats=unix,mac,dos
+set fileformats=dos,unix,mac
 
 set wildmode=list:longest,full
 set scrolloff=4
@@ -339,6 +347,8 @@ nmap <silent> <special> <F2> :NERDTreeToggle<cr>
 map <leader>tb :NERDTreeFromBookmark
 map <leader>tf :NERDTreeFind<cr>
 
+"Goyo
+nmap <silent> <special> <F12> :Goyo<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -496,3 +506,27 @@ let g:notes_directories = ['~/Desktop/Notes']
 let g:notes_suffix = '.txt'
 let g:notes_title_sync = 'change_title'
 let g:notes_word_boundaries = 1
+map <leader>q :%s/\s\+$//e<cr>
+
+let g:vimwiki_folding='syntax'
+
+let vim_markdown_preview_temp_file=1
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='firefox'
+let vim_markdown_preview_github=1
+let vim_markdown_preview_toggle=2
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+    let @" = s:restore_reg
+    return ''
+endfunction
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
