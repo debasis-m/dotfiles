@@ -1,3 +1,4 @@
+# install rust broot scm-breeze
 fortune 
 alias factor='gfactor'
 alias ll='ls -ahlG' 
