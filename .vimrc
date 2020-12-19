@@ -22,6 +22,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/seoul256.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'justinmk/vim-sneak'
+  Plug 'kaicataldo/material.vim'
   Plug 'leafgarland/typescript-vim'
   Plug 'majutsushi/tagbar'
   Plug 'matze/vim-move'
@@ -47,6 +48,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-vinegar'
   Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'vim-scripts/argtextobj.vim'
   Plug 'vim-scripts/wombat256.vim'
   Plug 'vim-syntastic/syntastic'
@@ -112,6 +114,10 @@ nmap ga <Plug>(EasyAlign)
 colorscheme desert
 "colorscheme seoul256
 "colorscheme badwolf
+"colorscheme material
+
+let g:material_theme_style = 'default'
+
 syntax on
 filetype off
 filetype plugin indent on
